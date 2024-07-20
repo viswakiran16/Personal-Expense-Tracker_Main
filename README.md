@@ -30,7 +30,7 @@ This project is a personal expense tracker application that allows users to reco
 
 ## Project Structure
 
-
+ ```bash
 my-expense-tracker/
 │
 ├── backend/
@@ -86,7 +86,7 @@ my-expense-tracker/
 │   └── vite.config.js
 │
 └── ...
-
+  ```
 ## Getting Started
 
 ### Backend

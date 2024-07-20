@@ -25,9 +25,12 @@ This project is a personal expense tracker application that allows users to reco
 - **Backend:** Node.js, Express, MongoDB
 - **Frontend:** React, Vite, Tailwind CSS
 
+### Sample Screenshots
+
+
 ## Project Structure
 
-```plaintext
+
 my-expense-tracker/
 │
 ├── backend/
@@ -84,187 +87,240 @@ my-expense-tracker/
 │
 └── ...
 
-Getting Started
-Backend
-Clone the repository:
+## Getting Started
 
-bash
+### Backend
 
-git clone <repository_url>
-cd my-expense-tracker/backend
-Install dependencies:
+1. **Clone the repository:**
 
-bash
+    ```bash
+    git clone <repository_url>
+    cd my-expense-tracker/backend
+    ```
 
-npm install
-Environment variables:
+2. **Install dependencies:**
 
-Create a .env file in the backend directory and add the following variables:
+    ```bash
+    npm install
+    ```
 
-makefile
+3. **Environment variables:**
 
-MONGO_URI=<your_mongodb_uri>
-JWT_SECRET=<your_jwt_secret>
-Start the server:
+    Create a `.env` file in the backend directory and add the following variables:
 
-bash
+    ```makefile
+    MONGO_URI=<your_mongodb_uri>
+    JWT_SECRET=<your_jwt_secret>
+    ```
 
-npm start
-The backend server should be running on http://localhost:5000.
+4. **Start the server:**
 
-Frontend
-Navigate to the frontend directory:
+    ```bash
+    npm start
+    ```
 
-bash
+    The backend server should be running on [http://localhost:5000](http://localhost:5000).
 
-cd ../frontend
-Install dependencies:
+### Frontend
 
-bash
+1. **Navigate to the frontend directory:**
 
-npm install
-Start the development server:
+    ```bash
+    cd ../frontend
+    ```
 
-bash
+2. **Install dependencies:**
 
-npm run dev
-The frontend should be running on http://localhost:3000.
+    ```bash
+    npm install
+    ```
 
-API Endpoints
-Authentication
-Register: POST /api/auth/register
+3. **Start the development server:**
 
-Input:
-json
+    ```bash
+    npm run dev
+    ```
 
-{
-  "email": "user@example.com",
-  "password": "password"
-}
-Output:
-json
+    The frontend should be running on [http://localhost:3000](http://localhost:3000).
 
-{
-  "token": "jwt_token"
-}
-Login: POST /api/auth/login
+### API Endpoints
 
-Input:
-json
+#### Authentication
 
-{
-  "email": "user@example.com",
-  "password": "password"
-}
-Output:
-json
+- **Register:**
 
-{
-  "token": "jwt_token"
-}
-Logout: POST /api/auth/logout
+    **Endpoint:** `POST /api/auth/register`
 
-Output:
-json
+    **Input:**
 
-{
-  "message": "Logged out successfully"
-}
-Expenses
-Add Expense: POST /api/expenses
+    ```json
+    {
+      "email": "user@example.com",
+      "password": "password"
+    }
+    ```
 
-Input:
-json
+    **Output:**
 
-{
-  "date": "2024-07-18",
-  "amount": 50.0,
-  "category": "Food",
-  "description": "Lunch at restaurant"
-}
-Output:
-json
+    ```json
+    {
+      "token": "jwt_token"
+    }
+    ```
 
-{
-  "_id": "expense_id",
-  "date": "2024-07-18",
-  "amount": 50.0,
-  "category": "Food",
-  "description": "Lunch at restaurant",
-  "user": "user_id"
-}
-Get Expenses: GET /api/expenses
+- **Login:**
 
-Output:
-json
+    **Endpoint:** `POST /api/auth/login`
 
-[
-  {
-    "_id": "expense_id",
-    "date": "2024-07-18",
-    "amount": 50.0,
-    "category": "Food",
-    "description": "Lunch at restaurant",
-    "user": "user_id"
-  }
-]
-Update Expense: PUT /api/expenses/:id
+    **Input:**
 
-Input:
-json
+    ```json
+    {
+      "email": "user@example.com",
+      "password": "password"
+    }
+    ```
 
-{
-  "date": "2024-07-18",
-  "amount": 50.0,
-  "category": "Food",
-  "description": "Lunch at restaurant"
-}
-Output:
-json
+    **Output:**
 
-{
-  "_id": "expense_id",
-  "date": "2024-07-18",
-  "amount": 50.0,
-  "category": "Food",
-  "description": "Lunch at restaurant",
-  "user": "user_id"
-}
-Delete Expense: DELETE /api/expenses/:id
+    ```json
+    {
+      "token": "jwt_token"
+    }
+    ```
 
-Output:
-json
+- **Logout:**
 
-{
-  "message": "Expense deleted"
-}
-Categories
-Get Categories: GET /api/categories
-Output:
-json
+    **Endpoint:** `POST /api/auth/logout`
 
-[
-  {
-    "_id": "category_id",
-    "name": "Food",
-    "user": "user_id"
-  }
-]
-Running Tests
-Backend Tests:
+    **Output:**
 
-To run the backend tests, navigate to the backend directory and run:
+    ```json
+    {
+      "message": "Logged out successfully"
+    }
+    ```
 
-bash
+#### Expenses
 
-npm test
-Deployment
-You can deploy the application to a cloud service like Heroku, Vercel, or Netlify. Make sure to set the appropriate environment variables in your deployment settings.
+- **Add Expense:**
 
-Additional Notes
-Ensure MongoDB is running and accessible.
-Replace <repository_url> with your actual repository URL.
-Adjust any configurations as necessary for your environment.
+    **Endpoint:** `POST /api/expenses`
+
+    **Input:**
+
+    ```json
+    {
+      "date": "2024-07-18",
+      "amount": 50.0,
+      "category": "Food",
+      "description": "Lunch at restaurant"
+    }
+    ```
+
+    **Output:**
+
+    ```json
+    {
+      "_id": "expense_id",
+      "date": "2024-07-18",
+      "amount": 50.0,
+      "category": "Food",
+      "description": "Lunch at restaurant",
+      "user": "user_id"
+    }
+    ```
+
+- **Get Expenses:**
+
+    **Endpoint:** `GET /api/expenses`
+
+    **Output:**
+
+    ```json
+    [
+      {
+        "_id": "expense_id",
+        "date": "2024-07-18",
+        "amount": 50.0,
+        "category": "Food",
+        "description": "Lunch at restaurant",
+        "user": "user_id"
+      }
+    ]
+    ```
+
+- **Update Expense:**
+
+    **Endpoint:** `PUT /api/expenses/:id`
+
+    **Input:**
+
+    ```json
+    {
+      "date": "2024-07-18",
+      "amount": 50.0,
+      "category": "Food",
+      "description": "Lunch at restaurant"
+    }
+    ```
+
+    **Output:**
+
+    ```json
+    {
+      "_id": "expense_id",
+      "date": "2024-07-18",
+      "amount": 50.0,
+      "category": "Food",
+      "description": "Lunch at restaurant",
+      "user": "user_id"
+    }
+    ```
+
+- **Delete Expense:**
+
+    **Endpoint:** `DELETE /api/expenses/:id`
+
+    **Output:**
+
+    ```json
+    {
+      "message": "Expense deleted"
+    }
+    ```
+
+#### Categories
+
+- **Get Categories:**
+
+    **Endpoint:** `GET /api/categories`
+
+    **Output:**
+
+    ```json
+    [
+      {
+        "_id": "category_id",
+        "name": "Food",
+        "user": "user_id"
+      }
+    ]
+    ```
+
+### Running Tests
+
+#### Backend Tests:
+  - To run the backend tests, navigate to the backend directory and run:
+  - npm test
+
+### Deployment
+- You can deploy the application to a cloud service like Heroku, Vercel, or Netlify. Make sure to set the appropriate environment variables in your deployment settings.
+
+## Additional Notes
+- Ensure MongoDB is running and accessible.
+- Replace <repository_url> with your actual repository URL.
+- Adjust any configurations as necessary for your environment.
 
 
 You can save this text as `README.md` in your GitHub repository.

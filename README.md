@@ -329,8 +329,8 @@ my-expense-tracker/
 
 ## Additional Notes
 - Ensure MongoDB is running and accessible.
-- Replace <repository_url> with your actual repository URL.
+- Repository Link <https://github.com/viswakiran16/Personal-Expense-Tracker_Main> 
 - Adjust any configurations as necessary for your environment.
 
 
-You can save this text as `README.md` in your GitHub repository.
+- [Kiran](https://github.com/viswakiran16)

@@ -26,6 +26,7 @@ This project is a personal expense tracker application that allows users to reco
 - **Frontend:** React, Vite, Tailwind CSS
 
 ### Sample Screenshots
+![Register](assests/1.png)
 
 
 ## Project Structure
